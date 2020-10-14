@@ -1,9 +1,19 @@
+# Elaborado por: Leandro Camacho Aguilar & Celina Madrigal Murillo
+# Fecha de Creación: 13/10/2020 10:00pm
+# Fecha de última Modificación: 14/10/2020 09:39am
+# Versión: 3.8
+
+#Importación de librerias
 from datetime import date
+
+#Definición de funciones 
 def getStringToList(fecha):#!Formato de fecha esperado YYYY/MM/DD
     """
     Funcionamiento: Utiliza el string y lo acomoda en una lista ordenada para ingresarse al date()
     Entradas: fecha(str): 
-    Salidas: retorna una lista ordenada por YYYY/MM/DD """
+    Salidas: retorna una lista ordenada por YYYY/MM/DD 
+
+    """
     year=int(fecha[:4])
     month=int(fecha[5:7])
     day=int(fecha[8:])
@@ -22,9 +32,11 @@ def getYears(fecha): #!Formato de fecha esperado YYYY/MM/DD
 def getHoroscope(fecha):
     fecha=getStringToList(fecha)
     """
-    Funcionamiento: Utiliza el string y lo acomoda en una lista ordenada para ingresarse al date()
+    Funcionamiento: Según la fecha de nacimiento dice a que signo pertenece 
     Entradas: fecha(str): 
-    Salidas: retorna una lista ordenada por YYYY/MM/DD """
+    Salidas: String
+
+    """
     if fecha[1] == 12:
         if fecha[2] < 22: return "Sagitario"
         else: return "Capricornio"
@@ -51,9 +63,9 @@ def getHoroscope(fecha):
         else: return "Leo"
     elif fecha[1] == 8:
         if fecha[2] < 23: return "Leo"
-        else: return "virgo"
+        else: return "Virgo"
     elif fecha[1] == 9:
-        if fecha[2] < 23: return "virgo"
+        if fecha[2] < 23: return "Virgo"
         else: return "Libra"
     elif fecha[1] == 10:
         if fecha[2] < 23: return "Libra"
@@ -64,10 +76,9 @@ def getHoroscope(fecha):
 def fromDecToBin(x):
     """
     Funcionamiento: Crea un número binario a partir del número decimal dado.
-    Entradas:
-        x(int): Número decimal
-    Salidas:
-        respuesta(int): Número binario
+    Entradas: x(int): Número decimal
+    Salidas:respuesta(int): Número binario
+
     """
     respuesta = 0
     i=0
@@ -76,7 +87,95 @@ def fromDecToBin(x):
         x = x//2
         i = i + 1
     return respuesta
-#!comments missing
 def yearToBin(fecha):
+    """
+    Funcionamiento: Convierte la edad en binario.
+    Entradas: fecha(str):
+    Salidas: Número binario
+
+    """
     years=getYears(fecha)
     return (fromDecToBin(years))
+def esPar(num):
+    """
+    Funcionamiento: Dice si un número es par o impar.
+    Entradas: Número
+    Salidas: Booleano 
+
+    """
+    if num%2==0:
+        return True
+    return False
+def diaParImpar(dia):
+    """
+    Funcionamiento: Dice si un número es par o impar.
+    Entradas: fecha(str)
+    Salidas: String
+
+    """
+    if esPar(getStringToList(dia)[2]):
+        return 'par'
+    return 'impar'
+def nombreMes(numMes):
+    """
+    Funcionamiento: Dado un número retorna a que mes representa ese número.
+    Entradas: fecha(str)
+    Salidas: String
+
+    """
+    if getStringToList(numMes)[1]==1:
+        return 'Enero'
+    elif getStringToList(numMes)[1]==2:
+        return 'Febrero'
+    elif getStringToList(numMes)[1]==3:
+        return 'Marzo'
+    elif getStringToList(numMes)[1]==4:
+        return 'Abril'
+    elif getStringToList(numMes)[1]==5:
+        return 'Mayo'
+    elif getStringToList(numMes)[1]==6:
+        return 'Junio'
+    elif getStringToList(numMes)[1]==7:
+        return 'Julio'
+    elif getStringToList(numMes)[1]==8:
+        return 'Agosto'
+    elif getStringToList(numMes)[1]==9:
+        return 'Setiembre'
+    elif getStringToList(numMes)[1]==10:
+        return 'Octubre'
+    elif getStringToList(numMes)[1]==11:
+        return 'Noviembre'
+    else:
+        return 'Diciembre'
+def personalidad(signo):
+    """
+    Funcionamiento: Dice como es su personalidad según su signo.
+    Entradas: fecha(str)
+    Salidas: String
+
+    """
+    if getHoroscope(signo)=='Acuario':
+        return 'fuerte y simpática'
+    elif getHoroscope(signo)=='Piscis':
+        return 'tranquila, amable y amistosa'
+    elif getHoroscope(signo)=='Aries':
+        return 'enérgica y activa'
+    elif getHoroscope(signo)=='Tauro':
+        return 'práctica y tenaz'
+    elif getHoroscope(signo)=='Geminis':
+        return 'abierta y sociable'
+    elif getHoroscope(signo)=='Cáncer':
+        return 'leal y de carácter protector'
+    elif getHoroscope(signo)=='Leo':
+        return 'curiosa y enérgica'
+    elif getHoroscope(signo)=='Virgo':
+        return 'analítica y de perfil bajo'
+    elif getHoroscope(signo)=='Libra':
+        return 'justa e intelectual'
+    elif getHoroscope(signo)=='Escorpio':
+        return 'ambiciosa y pasional'
+    elif getHoroscope(signo)=='Sagitario':
+        return 'sociable y tolerante'
+    elif getHoroscope(signo)=='Capricornio':
+        return 'seria y realista'
+

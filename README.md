@@ -2,7 +2,7 @@
 #
 #
 #
-#Lab Listas
+# Lab Listas
 #
 # Laboratorio de Listas: Clínica del TEC
 #    Parejas de la tarea programada

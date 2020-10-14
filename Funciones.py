@@ -78,6 +78,5 @@ def fromDecToBin(x):
     return respuesta
 def yearToBin(fecha):
     years=getYears(fecha)
-    print(years)
     return (fromDecToBin(years))
 

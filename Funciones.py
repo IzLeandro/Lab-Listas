@@ -76,6 +76,7 @@ def fromDecToBin(x):
         x = x//2
         i = i + 1
     return respuesta
+#!comments missing
 def yearToBin(fecha):
     years=getYears(fecha)
     return (fromDecToBin(years))

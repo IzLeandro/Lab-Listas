@@ -4,6 +4,7 @@
 # Versión: 3.8
 import re
 from Funciones import getHoroscope,yearToBin,getYears
+#!Comments 
 def solicitarYValidarDatos():
     nombreCompleto=str(input("Digite su nombre completo: "))
 
@@ -27,6 +28,7 @@ def solicitarYValidarDatos():
         input("Ingrese un valor correcto en el apartado del sexo.\nPresione enter para continuar...")
         return ""
     return [nombreCompleto,fechaDeNacimiento,altura,sexo]
+#!Comments
 def mainMenu():
     paciente=solicitarYValidarDatos()
     if paciente=="":

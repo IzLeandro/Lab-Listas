@@ -3,6 +3,7 @@
 # Fecha de última Modificación: #!
 # Versión: 3.8
 import re
+from Funciones import *
 
 def solicitarYValidarDatos():
     nombreCompleto=str(input("Digite su nombre completo: "))
@@ -28,5 +29,12 @@ def solicitarYValidarDatos():
         return ""
     return [nombreCompleto,fechaDeNacimiento,altura,sexo]
 
-solicitarYValidarDatos()
+def mainMenu():
+    paciente=solicitarYValidarDatos()
+    if paciente=="":
+        return ""
+    print(paciente[0],"su signo sodiacal es:",getHoroscope(paciente[1]),"Usted tiene",getYears(paciente[1]),"años, que visto en binario es",yearToBin(paciente[1]))
+    print("su sexo es",["femenino","masculino"][paciente[3]],"y mide",paciente[2],"cm.")
+    return
 
+mainMenu()

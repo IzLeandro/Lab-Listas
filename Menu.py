@@ -8,7 +8,12 @@ import re
 from Funciones import *
 
 #Definición de funciones
-def solicitarYValidarDatos():
+def solicitarYValidarDatos():    
+    """
+    Funcionamiento: Solicita datos y los valida.
+    Entradas: N/A 
+    Salidas: retorna una lista ordenada con los datos del usuario 
+    """
     nombreCompleto=str(input("Digite su nombre completo: "))
 
     fechaDeNacimiento=str(input("Digite su fecha de nacimiento(Sea cuidadoso de usar el formado AAAA/MM/DD): "))
@@ -34,6 +39,11 @@ def solicitarYValidarDatos():
 
 #Programa Principal
 def mainMenu():
+    """
+    Funcionamiento: Valida que no llegue un dato vacío e imprime la información ordenada.
+    Entradas: N/A
+    Salidas: N/A
+    """
     paciente=solicitarYValidarDatos()
     if paciente=="":
         return ""

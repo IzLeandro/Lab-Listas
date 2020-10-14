@@ -7,5 +7,5 @@
 #    False=mujer
 #    1. Solicitar los datos al usuario.
 #    2. Interpreta:
-#    a. Menganito, usted… (horóscopo) y tiene (Número) años, que visto en binario es … #(convertir num-bin).
+#       a. Menganito, usted… (horóscopo) y tiene (Número) años, que visto en binario es … # (convertir num-bin).
 

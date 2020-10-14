@@ -1,4 +1,8 @@
-# Lab Listas
+# Primeros mini proyectos usando github :)!
+#
+#
+#
+#Lab Listas
 #
 # Laboratorio de Listas: Clínica del TEC
 #    Parejas de la tarea programada

@@ -47,6 +47,6 @@ def mainMenu():
     paciente=solicitarYValidarDatos()
     if paciente=="":
         return ""
-    print(paciente[0],", usted nació un día",diaParImpar(paciente[1]),"del mes de",nombreMes(paciente[1]),", usted tiene",getYears(paciente[1]),"años, que visto en binario es",yearToBin(paciente[1]), ",su signo sodiacal es:",getHoroscope(paciente[1]),"por ende su personalidad es",personalidad(paciente[1]),", su sexo es",["femenino","masculino"][paciente[3]],"y mide",paciente[2],"cm.")
+    print(paciente[0],", usted nació un día",diaParImpar(paciente[1]),"del mes de",nombreMes(paciente[1]),", usted tiene",getYears(paciente[1]),"años, que visto en binario es",yearToBin(paciente[1]), "\nSu signo sodiacal es:",getHoroscope(paciente[1]),"por ende su personalidad es",personalidad(paciente[1]),", su sexo es",["femenino","masculino"][paciente[3]],"y mide",paciente[2],"cm.")
     return
 mainMenu()

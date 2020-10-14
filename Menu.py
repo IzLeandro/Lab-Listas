@@ -1,10 +1,13 @@
-# Elaborado por: Leandro Camacho Aguilar & Celina Madrigal
+# Elaborado por: Leandro Camacho Aguilar & Celina Madrigal Murillo
 # Fecha de Creación: 13/10/2020 10:00pm
-# Fecha de última Modificación: 14/10/2020 03:22am
+# Fecha de última Modificación: 14/10/2020 09:39am
 # Versión: 3.8
+
+#Importación de librerias
 import re
-from Funciones import getHoroscope,yearToBin,getYears
-#!Comments 
+from Funciones import *
+
+#Definición de funciones
 def solicitarYValidarDatos():
     nombreCompleto=str(input("Digite su nombre completo: "))
 
@@ -13,7 +16,7 @@ def solicitarYValidarDatos():
         input("Compruebe que esté siguiendo correctamente el formato solicitado al ingresar la fecha.\nPresione enter para continuar...")
         return ""
 
-    altura=input("Digite su altura: (ej: 1.80)")
+    altura=input("Digite su altura (ej: 1.80):")
     try:
         altura=float(altura)
     except:
@@ -28,12 +31,12 @@ def solicitarYValidarDatos():
         input("Ingrese un valor correcto en el apartado del sexo.\nPresione enter para continuar...")
         return ""
     return [nombreCompleto,fechaDeNacimiento,altura,sexo]
-#!Comments
+
+#Programa Principal
 def mainMenu():
     paciente=solicitarYValidarDatos()
     if paciente=="":
         return ""
-    print(paciente[0],"su signo sodiacal es:",getHoroscope(paciente[1]),"Usted tiene",getYears(paciente[1]),"años, que visto en binario es",yearToBin(paciente[1]))
-    print("su sexo es",["femenino","masculino"][paciente[3]],"y mide",paciente[2],"cm.")
+    print(paciente[0],", usted nació un día",diaParImpar(paciente[1]),"del mes de",nombreMes(paciente[1]),", usted tiene",getYears(paciente[1]),"años, que visto en binario es",yearToBin(paciente[1]), ",su signo sodiacal es:",getHoroscope(paciente[1]),"por ende su personalidad es",personalidad(paciente[1]),", su sexo es",["femenino","masculino"][paciente[3]],"y mide",paciente[2],"cm.")
     return
 mainMenu()

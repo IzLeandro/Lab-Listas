@@ -179,3 +179,29 @@ def personalidad(signo):
     elif getHoroscope(signo)=='Capricornio':
         return 'seria y realista'
 
+def fortest(num1,num2):
+    i=0
+    result=0
+    exp=0
+    while num1 != 0:
+        i=num1%10
+        num1=num1//10
+        rep=True
+        num2aux=num2
+        while num2aux!=0:
+            if i==num2aux%10:
+                rep=False
+                break
+            else:
+                num2aux=num2aux//10
+        if rep==True:
+            result=result + (i * (10**exp))
+            exp+=1
+    return result
+
+def prueba(num1,num2):
+    res=(fortest(num1,num2))
+    res=res+(fortest(num2,num1)*(10**(3)))
+    return res
+
+print(prueba(1234,4567))
